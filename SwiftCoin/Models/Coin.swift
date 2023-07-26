@@ -14,7 +14,7 @@ struct Coin: Codable, Identifiable {
     let image: String
     let currentPrice, totalVolume: Double
     let marketRank, marketCap: Int
-    let marketCapChange, priceChange24H,priceChangePercentage, high24H, low24H, marketCapChangePercentage: Double
+    let marketCapChange, priceChange24H, priceChangePercentage, high24H, low24H, marketCapChangePercentage: Double
     let sparkLineIn7D: SparklineIn7D
 
     enum CodingKeys: String, CodingKey {

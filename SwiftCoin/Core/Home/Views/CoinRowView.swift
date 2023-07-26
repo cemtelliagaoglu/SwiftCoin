@@ -5,13 +5,12 @@
 //  Created by admin on 25.07.2023.
 //
 
-import SwiftUI
 import Kingfisher
+import SwiftUI
 
 struct CoinRowView: View {
-
     let coin: Coin
-    
+
     var body: some View {
         HStack(alignment: .center) {
             Text("\(coin.marketRank ?? 1)")
@@ -32,18 +31,20 @@ struct CoinRowView: View {
                     .font(.caption)
                     .padding(.leading, 6)
             }
+            .foregroundColor(Color.theme.primaryTextColor)
             .padding(.leading, 2)
 
             Spacer()
 
             VStack(alignment: .trailing, spacing: 4) {
-                Text(String(coin.currentPrice?.toCurrency() ?? "$0.00"))
+                Text(String(coin.currentPrice.toCurrency()))
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .padding(.leading, 4)
+                    .foregroundColor(Color.theme.primaryTextColor)
                 Text(String(coin.priceChangePercentage.toPercentString()))
                     .font(.caption)
-                    .foregroundColor(coin.priceChangePercentage > 0 ? .green: .red)
+                    .foregroundColor(coin.priceChangePercentage > 0 ? .green : .red)
                     .padding(.leading, 6)
             }
         }
@@ -51,4 +52,3 @@ struct CoinRowView: View {
         .padding(.vertical, 4)
     }
 }
-

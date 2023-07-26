@@ -5,11 +5,10 @@
 //  Created by admin on 25.07.2023.
 //
 
-import SwiftUI
 import Kingfisher
+import SwiftUI
 
 struct TopMoversItemView: View {
-
     let coin: Coin
 
     var body: some View {
@@ -22,16 +21,17 @@ struct TopMoversItemView: View {
                 Text(coin.symbol.uppercased())
                     .font(.caption)
                     .fontWeight(.bold)
-                Text("\(coin.currentPrice?.toCurrency() ?? "1")")
+                    .foregroundColor(Color.theme.primaryTextColor)
+                Text("\(coin.currentPrice.toCurrency())")
                     .font(.caption)
                     .foregroundColor(.gray)
             }
             Text("\(coin.priceChangePercentage.toPercentString())")
                 .font(.title2)
-                .foregroundColor(coin.priceChangePercentage > 0 ? .green: .red)
+                .foregroundColor(coin.priceChangePercentage > 0 ? .green : .red)
         }
         .frame(width: 140, height: 140)
-        .background(Color("ItemBackgroundColor"))
+        .background(Color.theme.itemBackgroundColor)
         .overlay {
             RoundedRectangle(cornerRadius: 10)
                 .stroke(Color(.systemGray4), lineWidth: 2)

@@ -28,7 +28,7 @@ class DeveloperPreview {
         StatisticModel(title: "Volume", value: "35.00Bn", percentageChange: nil),
     ])
 
-    let coin = Coin(id: "1", name: "Bitcoin", symbol: "BTC", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579", currentPrice: 29227, totalVolume: 9964223537, marketRank: 1, marketCap: 568366619437, marketCapChange: 1950962135, priceChange24H: 31.78, priceChangePercentage: 0.27914, high24H: 29096, low24H: 29304, marketCapChangePercentage: 0.344, sparkLineIn7D: .init(price: [
+    let coin = Coin(id: "1", name: "Bitcoin", symbol: "BTC", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579", currentPrice: 29227, totalVolume: 9_964_223_537, marketRank: 1, marketCap: 568_366_619_437, marketCapChange: 1_950_962_135, priceChange24H: 31.78, priceChangePercentage: 0.27914, high24H: 29096, low24H: 29304, marketCapChangePercentage: 0.344, sparkLineIn7D: .init(price: [
         30108.294324529867, 30039.392592721255, 30034.22459787704,
         29948.78335372274, 30017.251004800255, 29986.289240669008,
         29998.831260810937, 29951.256144329065, 30034.867182143484,

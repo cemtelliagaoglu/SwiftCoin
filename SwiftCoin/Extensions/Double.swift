@@ -8,7 +8,6 @@
 import Foundation
 
 extension Double {
-
     private var currencyFormatter: NumberFormatter {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
@@ -31,8 +30,7 @@ extension Double {
     }
 
     func toPercentString() -> String {
-        guard let percentString = numberFormatter.string(for: self) else { return "0.00%"}
+        guard let percentString = numberFormatter.string(for: self) else { return "0.00%" }
         return percentString + "%"
     }
-
 }

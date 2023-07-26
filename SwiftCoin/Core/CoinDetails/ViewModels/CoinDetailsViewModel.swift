@@ -67,10 +67,10 @@ class CoinDetailsViewModel {
                                            value: String(marketCapChange),
                                            percentageChange: marketCapChangePercent)
         return CoinDetailSectionModel(title: "Additional Details",
-                                      stats: [ highStat,
-                                               lowStat,
-                                               priceChangeStat,
-                                               marketCapStat ])
+                                      stats: [highStat,
+                                              lowStat,
+                                              priceChangeStat,
+                                              marketCapStat])
     }
 
     init(coin: Coin) {
