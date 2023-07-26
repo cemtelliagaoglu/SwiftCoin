@@ -10,6 +10,7 @@ import SwiftUI
 class HomeViewModel: ObservableObject, HTTPClient {
     @Published var coins = [Coin]()
     @Published var topMovingCoins = [Coin]()
+    @Published var isLoadingData = true
 
     init() {
         fetchCoinData()
@@ -22,9 +23,13 @@ class HomeViewModel: ObservableObject, HTTPClient {
                 DispatchQueue.main.async {
                     self.coins = response
                     self.configureTopMovingCoins()
+                    self.isLoadingData = false
                 }
             case let .failure(error):
-                print(error)
+                DispatchQueue.main.async {
+                    print(error)
+                    self.isLoadingData = false
+                }
             }
         }
     }
