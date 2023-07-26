@@ -13,14 +13,16 @@ struct Coin: Codable, Identifiable {
     let symbol: String
     let image: String
     let currentPrice, totalVolume: Double
-    let marketRank, marketCap: Int
-    let marketCapChange, priceChange24H, priceChangePercentage, high24H, low24H, marketCapChangePercentage: Double
+    let marketRank: Int
+    let marketCap, marketCapChange, priceChange24H, priceChangePercentage, high24H, low24H, marketCapChangePercentage: Double
     let sparkLineIn7D: SparklineIn7D
+    let lastUpdated: String
 
     enum CodingKeys: String, CodingKey {
         case name, symbol, image, id
         case marketCap = "market_cap"
         case marketCapChange = "market_cap_change_24h"
+        case lastUpdated = "last_updated"
         case marketCapChangePercentage = "market_cap_change_percentage_24h"
         case high24H = "high_24h"
         case low24H = "low_24h"
