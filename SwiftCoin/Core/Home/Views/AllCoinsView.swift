@@ -29,7 +29,7 @@ struct AllCoinsView: View {
                 ForEach(viewModel.coins) { coin in
                     HStack(alignment: .center) {
                         NavigationLink {
-                            CoinDetailsView(coin: coin)
+                            LazyNavigationView(CoinDetailsView(coin: coin))
                         } label: {
                             CoinRowView(coin: coin)
                         }

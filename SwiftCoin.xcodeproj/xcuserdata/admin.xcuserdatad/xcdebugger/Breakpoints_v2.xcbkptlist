@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8E2ABEC6-DF17-430D-9B32-AB722D7AE9DF"
+            uuid = "6D8AF505-089A-453B-A9CF-B627DF0F44AB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SwiftCoin/Networking/HTTPClient.swift"
+            filePath = "SwiftCoin/Core/Home/ViewModels/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "sendRequest(endpoint:responseModel:completion:)"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "fetchCoinData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
