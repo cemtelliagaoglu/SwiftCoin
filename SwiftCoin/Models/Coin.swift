@@ -14,7 +14,7 @@ struct Coin: Codable, Identifiable {
     let symbol: String
     let image: String
     let currentPrice: Double?
-    let marketRank: Double?
+    let marketRank: Int
     let priceChangePercentage: Double
 
     enum CodingKeys: String, CodingKey {
