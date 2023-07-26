@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct TopMoversView: View {
-
     @StateObject var viewModel: HomeViewModel
 
     var body: some View {
@@ -18,7 +17,11 @@ struct TopMoversView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 16) {
                     ForEach(viewModel.topMovingCoins) { coin in
-                        TopMoversItemView(coin: coin)
+                        NavigationLink {
+                            CoinDetailsView(coin: coin)
+                        } label: {
+                            TopMoversItemView(coin: coin)
+                        }
                     }
                 }
             }
