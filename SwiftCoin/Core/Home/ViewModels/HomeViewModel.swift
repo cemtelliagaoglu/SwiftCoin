@@ -10,6 +10,7 @@ import SwiftUI
 class HomeViewModel: ObservableObject, HTTPClient {
 
     @Published var coins = [Coin]()
+    @Published var topMovingCoins = [Coin]()
 
     init() {
         fetchCoinData()
@@ -19,10 +20,18 @@ class HomeViewModel: ObservableObject, HTTPClient {
         sendRequest(endpoint: CoinsEndpoint.all, responseModel: [Coin].self) { result in
             switch result {
             case .success(let response):
-                self.coins = response
+                DispatchQueue.main.async {
+                    self.coins = response
+                    self.configureTopMovingCoins()
+                }
             case .failure(let error):
                 print(error)
             }
         }
+    }
+
+    func configureTopMovingCoins() {
+        let topMovers = coins.sorted(by: { $0.priceChangePercentage > $1.priceChangePercentage })
+        self.topMovingCoins = Array(topMovers.prefix(10))
     }
 }
