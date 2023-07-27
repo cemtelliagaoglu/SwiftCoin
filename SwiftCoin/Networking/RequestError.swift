@@ -12,6 +12,7 @@ public enum RequestError: Error {
     case invalidURL
     case noResponse
     case unauthorized
+    case rateLimit
     case unexpectedStatusCode
     case unknown
 
@@ -23,6 +24,8 @@ public enum RequestError: Error {
             return "Session expired"
         case .noResponse:
             return "Response error"
+        case .rateLimit:
+            return "You have reached the request limit. Please try again later."
         default:
             return "Unknown error"
         }

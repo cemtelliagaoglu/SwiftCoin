@@ -49,6 +49,8 @@ public extension HTTPClient {
                     return completion(.success(decodedResponse))
                 case 401:
                     return completion(.failure(.unauthorized))
+                case 429:
+                    return completion(.failure(.rateLimit))
                 default:
                     return completion(.failure(.unexpectedStatusCode))
                 }
