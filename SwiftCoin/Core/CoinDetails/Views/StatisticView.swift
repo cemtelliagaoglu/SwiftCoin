@@ -19,7 +19,7 @@ struct StatisticView: View {
                 .font(.headline)
             if let percentChange = model.percentageChange {
                 HStack {
-                    Image(systemName: "triangle.fill")
+                    Image(systemName: percentChange > 0 ? "arrowtriangle.up.fill": "arrowtriangle.down.fill")
                         .font(.caption)
 
                     Text(percentChange.toPercentString())
